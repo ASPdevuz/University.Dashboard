@@ -1,0 +1,117 @@
+﻿<Window x:Class="University.Dashboard.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:University.Dashboard"
+        mc:Ignorable="d"
+        Title="Dashboard window" 
+        Height="700"
+        Width="1200"
+        Background="#caf0f8"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="20 15">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Border x:Name="LeftBrd"
+                    Background="#90e0ef"
+                    CornerRadius="15">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.15*"/>
+                        <RowDefinition Height="0.1*"/>
+                        <RowDefinition Height="0.1*"/>
+                        <RowDefinition Height="0.1*"/>
+                        <RowDefinition Height="0.1*"/>
+                        <RowDefinition Height="0.1*"/>
+                        <RowDefinition Height="0.1*"/>
+                        <RowDefinition Height="0.1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Border Height="50"
+                                Width="50"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                Margin="15 0 0 0">
+                            <Image x:Name="DashboardIcon"
+                                   Source="D:\dev\Edu\Edu.ControlSystem\University.Dashboard\University.Dashboard\Images\Icons\court_8773810.png"/>
+                        </Border>
+                        <Label x:Name="Dashboardlbl"
+                               Content="Univerity"
+                               FontSize="24"
+                               FontFamily="Segoe UI bold"
+                               Foreground="#03045e"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Center"
+                               Margin="0 0 15 0"/>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Button x:Name="DashboardBtn"
+                                Content="Dashboard"
+                                FontSize="18"
+                                FontFamily="Segoe UI bold"
+                                Foreground="#03045e"
+                                Background="Transparent"
+                                BorderThickness="0">
+                        </Button>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Button x:Name="CourseBtn"
+                                Content="Courses"
+                                FontSize="18"
+                                FontFamily="Segoe UI bold"
+                                Foreground="#03045e"
+                                Background="Transparent"
+                                BorderThickness="0">
+                        </Button>
+                    </Grid>
+                    <Grid Grid.Row="3">
+                        <Button x:Name="StudentBtn"
+                                Content="Students"
+                                FontSize="18"
+                                FontFamily="Segoe UI bold"
+                                Foreground="#03045e"
+                                Background="Transparent"
+                                BorderThickness="0">
+                        </Button>
+                    </Grid>
+                    <Grid Grid.Row="4">
+                        <Button x:Name="TeacherBtn"
+                                Content="Teachers"
+                                FontSize="18"
+                                FontFamily="Segoe UI bold"
+                                Foreground="#03045e"
+                                Background="Transparent"
+                                BorderThickness="0">
+                        </Button>
+                    </Grid>
+                    <Grid Grid.Row="5">
+                        <Button x:Name="Propertiesbtn"
+                                Content="Properties"
+                                FontSize="18"
+                                FontFamily="Segoe UI bold"
+                                Foreground="#03045e"
+                                Background="Transparent"
+                                BorderThickness="0">
+                        </Button>
+                    </Grid>
+                    <Grid Grid.Row="6">
+                        <Button x:Name="CloseBtn"
+                                Content="Close"
+                                FontSize="18"
+                                Click="CloseBtn_Click"
+                                FontFamily="Segoe UI bold"
+                                Foreground="#c1121f"
+                                Background="Transparent"
+                                BorderThickness="0">
+                        </Button>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>
