@@ -23,5 +23,16 @@ namespace University.Dashboard
 
         private void CloseBtn_Click(object sender, RoutedEventArgs e)
             => this.Close();
+
+        public void AddUserControl(UserControl userControl)
+        {
+            MenuPanel.Children.Clear();
+            MenuPanel.Children.Add(userControl);
+        }
+        private void DashboardbtnClick(object sender, RoutedEventArgs e)
+        {
+            DashboardUserControl userControl = new DashboardUserControl();
+            AddUserControl(userControl);
+        }
     }
 }
