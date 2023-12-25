@@ -19,6 +19,8 @@ namespace University.Dashboard
         public MainWindow()
         {
             InitializeComponent();
+            DashboardUserControl userControl = new DashboardUserControl();
+            AddUserControl(userControl);
         }
 
         private void CloseBtn_Click(object sender, RoutedEventArgs e)
@@ -32,6 +34,12 @@ namespace University.Dashboard
         private void DashboardbtnClick(object sender, RoutedEventArgs e)
         {
             DashboardUserControl userControl = new DashboardUserControl();
+            AddUserControl(userControl);
+        }
+
+        private void Coursebtn_click(object sender, RoutedEventArgs e)
+        {
+            CourseUserControl userControl = new CourseUserControl();
             AddUserControl(userControl);
         }
     }

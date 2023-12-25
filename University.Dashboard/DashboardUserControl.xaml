@@ -24,7 +24,7 @@
                     <Grid Grid.Row="0">
                         <Label x:Name="Courseslbl"
                                 FontSize="22"
-                                Content="Course"
+                                Content="Courses"
                                 FontFamily="Segoe ui semibold"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
@@ -76,6 +76,9 @@
                     </Grid>
                 </Border>
             </Grid>
+        </Grid>
+        <Grid Grid.Column="2">
+            
         </Grid>
     </Grid>
 </UserControl>

@@ -112,6 +112,7 @@
                         <Button x:Name="CourseBtn"
                                 Content="Courses"
                                 FontSize="18"
+                                Click="Coursebtn_click"
                                 FontFamily="Segoe UI bold"
                                 Foreground="#03045e"
                                 Background="Transparent"
@@ -139,8 +140,8 @@
                         </Button>
                     </Grid>
                     <Grid Grid.Row="5">
-                        <Button x:Name="Propertiesbtn"
-                                Content="Properties"
+                        <Button x:Name="Settingsbtn"
+                                Content="Settings"
                                 FontSize="18"
                                 FontFamily="Segoe UI bold"
                                 Foreground="#03045e"
