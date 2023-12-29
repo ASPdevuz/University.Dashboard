@@ -123,6 +123,7 @@
                         <Button x:Name="StudentBtn"
                                 Content="Students"
                                 FontSize="18"
+                                Click="Studentbtn_click"
                                 FontFamily="Segoe UI bold"
                                 Foreground="#03045e"
                                 Background="Transparent"

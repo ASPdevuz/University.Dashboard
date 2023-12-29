@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using University.Dashboard.UserControls.Student;
 
 namespace University.Dashboard
 {
@@ -40,6 +41,12 @@ namespace University.Dashboard
         private void Coursebtn_click(object sender, RoutedEventArgs e)
         {
             CourseUserControl userControl = new CourseUserControl();
+            AddUserControl(userControl);
+        }
+
+        private void Studentbtn_click(object sender, RoutedEventArgs e)
+        {
+            StudentUserControl userControl = new StudentUserControl();
             AddUserControl(userControl);
         }
     }
