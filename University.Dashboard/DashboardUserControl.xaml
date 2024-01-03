@@ -6,6 +6,63 @@
              xmlns:local="clr-namespace:University.Dashboard"
              mc:Ignorable="d" 
              d:DesignHeight="560" d:DesignWidth="930">
+    <UserControl.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="Facultybtn" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="12" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
     <Grid Margin="0 30 0 0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.5*"/>
@@ -78,7 +135,80 @@
             </Grid>
         </Grid>
         <Grid Grid.Column="2">
-            
+            <Border Height="400"
+                    CornerRadius="25"
+                    Background="#90e0ef">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.2*"/>
+                        <RowDefinition Height="0.2*"/>
+                        <RowDefinition Height="0.2*"/>
+                        <RowDefinition Height="0.2*"/>
+                        <RowDefinition Height="0.2*"/>
+                        <RowDefinition Height="0.2*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Label x:Name="Facultylbl"
+                               Content="Faculties"
+                               FontSize="22"
+                               FontFamily="Segoe ui semibold"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid>
+                            <Button Style="{DynamicResource Facultybtn}"
+                                    x:Name="EngineerView"
+                                    Content="Engineer"
+                                    FontFamily="Segoe ui semibold"
+                                    Background="#e9c46a"
+                                    Height="40"
+                                    Width="140"
+                                    FontSize="16"/>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Button Style="{DynamicResource Facultybtn}"
+                                x:Name="NaturalScienceView"
+                                Content="Natural sciences"
+                                FontFamily="Segoe ui semibold"
+                                Background="#e76f51"
+                                Height="40"
+                                Width="140"
+                                FontSize="16"/>
+                    </Grid>
+                    <Grid Grid.Row="3">
+                        <Button Style="{DynamicResource Facultybtn}"
+                                x:Name="ManagementView"
+                                Content="Management"
+                                FontFamily="Segoe ui semibold"
+                                Background="#ef233c"
+                                Height="40"
+                                Width="140"
+                                FontSize="16"/>
+                    </Grid>
+                    <Grid Grid.Row="4">
+                        <Button Style="{DynamicResource Facultybtn}"
+                                x:Name="MediaView"
+                                Content="Arts and Media"
+                                FontFamily="Segoe ui semibold"
+                                Background="#b5179e"
+                                Height="40"
+                                Width="140"
+                                FontSize="16"/>
+                    </Grid>
+                    <Grid Grid.Row="5">
+                        <Button Style="{DynamicResource Facultybtn}"
+                                x:Name="MedicineView"
+                                Content="Medicine"
+                                FontFamily="Segoe ui semibold"
+                                Background="#efefd0"
+                                Height="40"
+                                Width="140"
+                                FontSize="16"/>
+                    </Grid>
+                </Grid>
+            </Border>
         </Grid>
     </Grid>
 </UserControl>
