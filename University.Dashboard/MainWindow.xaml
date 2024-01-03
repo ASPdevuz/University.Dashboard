@@ -134,6 +134,7 @@
                         <Button x:Name="TeacherBtn"
                                 Content="Teachers"
                                 FontSize="18"
+                                Click="Teacherbtn_click"
                                 FontFamily="Segoe UI bold"
                                 Foreground="#03045e"
                                 Background="Transparent"
@@ -146,6 +147,7 @@
                                 FontSize="18"
                                 FontFamily="Segoe UI bold"
                                 Foreground="#03045e"
+                                Click="Settingsbtn_Click"
                                 Background="Transparent"
                                 BorderThickness="0">
                         </Button>

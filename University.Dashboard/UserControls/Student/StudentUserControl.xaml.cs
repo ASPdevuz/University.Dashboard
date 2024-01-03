@@ -40,5 +40,11 @@ namespace University.Dashboard.UserControls.Student
             StudentEditUserControl userControl = new StudentEditUserControl();
             AddUserControl(userControl);
         }
+
+        private void RemoveBtn_click(object sender, RoutedEventArgs e)
+        {
+            StudentDeleteUserControl userControl = new StudentDeleteUserControl();
+            AddUserControl(userControl);
+        }
     }
 }
