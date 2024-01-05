@@ -1,6 +1,7 @@
 ﻿using System.Configuration;
 using System.Data;
 using System.Windows;
+using University.Dashboard.UserControls.Course.Interface;
 
 namespace University.Dashboard
 {
@@ -9,6 +10,6 @@ namespace University.Dashboard
     /// </summary>
     public partial class App : Application
     {
+        
     }
-
 }
