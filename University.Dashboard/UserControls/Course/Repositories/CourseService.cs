@@ -33,7 +33,7 @@ namespace University.Dashboard.UserControls.Course.Repositories
 
         public async Task<List<CourseModel>> GetCources()
         {
-            var response = await client.GetAsync("Course");
+            var response = await client.GetAsync("Courses");
             response.EnsureSuccessStatusCode();
 
             if (response.IsSuccessStatusCode)

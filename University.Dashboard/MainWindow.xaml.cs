@@ -8,6 +8,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using University.Dashboard.UserControls.Course.Interface;
+using University.Dashboard.UserControls.Course.Model;
+using University.Dashboard.UserControls.Course.Repositories;
 using University.Dashboard.UserControls.Settings;
 using University.Dashboard.UserControls.Student;
 using University.Dashboard.UserControls.Teacher;
@@ -19,6 +22,7 @@ namespace University.Dashboard
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly ICourse course;
         public MainWindow()
         {
             InitializeComponent();
@@ -42,7 +46,7 @@ namespace University.Dashboard
 
         private void Coursebtn_click(object sender, RoutedEventArgs e)
         {
-            CourseUserControl userControl = new CourseUserControl();
+            CourseUserControl userControl = new CourseUserControl(course);
             AddUserControl(userControl);
         }
 

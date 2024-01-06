@@ -37,8 +37,7 @@ namespace University.Dashboard
         }
         public async void GetDB()
         {
-            var courses = await service.GetCources();
-            CourseDB.DataContext = courses;
+            CourseDB.DataContext = await service.GetCources();
         }
         private void AddUserControl(UserControl userControl)
         {
