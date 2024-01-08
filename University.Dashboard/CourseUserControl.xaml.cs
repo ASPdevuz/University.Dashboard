@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -13,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using University.Dashboard.UserControls.Course.Interface;
+using University.Dashboard.UserControls.Course.Model;
 using University.Dashboard.UserControls.User;
 
 namespace University.Dashboard
@@ -23,9 +24,8 @@ namespace University.Dashboard
     /// </summary>
     public partial class CourseUserControl : UserControl
     {
-        private readonly ICourse service;
         HttpClient client = new HttpClient();
-        public CourseUserControl(ICourse service)
+        public CourseUserControl()
         {
             client.BaseAddress = new Uri("http://localhost:5000/api/");
             client.DefaultRequestHeaders.Accept.Clear();
@@ -33,11 +33,19 @@ namespace University.Dashboard
                 new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json")
                 );
             InitializeComponent();
-            this.service = service;
         }
         public async void GetDB()
         {
-            CourseDB.DataContext = await service.GetCources();
+            var response = await client.GetStringAsync("Course/Courses");
+
+            if (response != null)
+            {
+                CourseDB.DataContext = JsonConvert.DeserializeObject<List<CourseModel>>(response);
+            }
+            else
+            {
+                return;
+            }
         }
         private void AddUserControl(UserControl userControl)
         {

@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using System.Net.Http;
+using System.Net.Http.Json;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -8,7 +10,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using University.Dashboard.UserControls.Course.Interface;
 using University.Dashboard.UserControls.Course.Model;
 using University.Dashboard.UserControls.Course.Repositories;
 using University.Dashboard.UserControls.Settings;
@@ -22,14 +23,13 @@ namespace University.Dashboard
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly ICourse course;
         public MainWindow()
         {
             InitializeComponent();
             DashboardUserControl userControl = new DashboardUserControl();
             AddUserControl(userControl);
         }
-
+       
         private void CloseBtn_Click(object sender, RoutedEventArgs e)
             => this.Close();
 
@@ -46,7 +46,7 @@ namespace University.Dashboard
 
         private void Coursebtn_click(object sender, RoutedEventArgs e)
         {
-            CourseUserControl userControl = new CourseUserControl(course);
+            CourseUserControl userControl = new CourseUserControl();
             AddUserControl(userControl);
         }
 

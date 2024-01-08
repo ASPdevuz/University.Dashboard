@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:University.Dashboard"
              mc:Ignorable="d" 
-             d:DesignHeight="560" d:DesignWidth="930">
+             d:DesignHeight="560" d:DesignWidth="930" Loaded="UserControl_Loaded">
     <UserControl.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -97,7 +97,7 @@
                             <DataGrid.Columns>
                                 <DataGridTextColumn Width="90" Header="Id" Binding="{Binding Path=Id}"/>
                                 <DataGridTextColumn Width="100" Header="Name" Binding="{Binding Path=Name}"/>
-                                <DataGridTextColumn Width="50" Header="Lavel" Binding="{Binding Path=Lavel}"/>
+                                <DataGridTextColumn Width="50" Header="Level" Binding="{Binding Path=Level}"/>
                                 <DataGridTextColumn Width="80" Header="Duration" Binding="{Binding Path=Duration}"/>
                                 <DataGridTextColumn Width="125" Header="Students" Binding="{Binding Path=Students}"/>
                             </DataGrid.Columns>
