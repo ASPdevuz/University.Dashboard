@@ -203,7 +203,8 @@
                 Height="40"
                 Width="200"
                 FontSize="22"
-                FontFamily="Segoe ui bold"/>
+                FontFamily="Segoe ui bold"
+                Click="EditCoursebtn_Click"/>
         </Grid>
     </Grid>
 </UserControl>

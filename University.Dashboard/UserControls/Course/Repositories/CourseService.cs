@@ -20,23 +20,13 @@ namespace University.Dashboard.UserControls.Course.Repositories
         }
         
 
-        public async void DeleteCourse(Guid id)
-        {
-            var responce = await client.DeleteAsync($"Course/{id}");
-            responce.EnsureSuccessStatusCode();
-        }
+        
 
         
 
         public async void GetCuorse(Guid id)
         {
-            var responce = await client.GetAsync($"Course/{id}");
-            responce.EnsureSuccessStatusCode();
-        }
-
-        public async void UpdateCourse(Guid id, UpdateCourseDto dto)
-        {
-            var responce = await client.PutAsJsonAsync($"Course/{id}", dto);
+            var responce = await client.GetAsync($"Course/Course/GetCourse/{id}");
             responce.EnsureSuccessStatusCode();
         }
     }
