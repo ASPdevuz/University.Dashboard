@@ -136,6 +136,7 @@
             <Button Style="{DynamicResource BtnStyle}" 
                     x:Name="StudentCoursebtn"
                     Content="Acceptance"
+                    Click="StudentCourseBtn_click"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Top"
                     Margin="0 15 0 0"

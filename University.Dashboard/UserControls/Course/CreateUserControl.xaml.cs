@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -34,23 +35,30 @@ namespace University.Dashboard.UserControls.User
         }
         public async void CreateCourse(CreateCourseDto newCourse)
         {
-            var responce = await client.PostAsJsonAsync("Course", newCourse);
-            responce.EnsureSuccessStatusCode();
+            try
+            {
+                var responce = await client.PostAsJsonAsync("Course/Course/Create", newCourse);
+                responce.EnsureSuccessStatusCode();
+            }
+            catch(HttpRequestException ex)
+            {
+                MessageBox.Show($"An error occured: {ex}");
+            }
         }
 
         private void CreateCoursebtn_Click(object sender, RoutedEventArgs e)
         {
             var selectedItem = CourseLaveltxt.SelectedItem as ComboBoxItem;
-            var levelDouble = Convert.ToDouble(selectedItem.Content.ToString());
+            var levelToDouble = Convert.ToDouble(selectedItem.Content.ToString());
             var newCourse = new CreateCourseDto
             {
                 Name = CourseNametxt.Text,
-                Level = levelDouble,
+                Level = levelToDouble,
                 Duration = CourseDurationtxt.Text
             };
             if(newCourse != null)
             {
-                CreateCourse(newCourse);
+                this.CreateCourse(newCourse);
                 MessageBox.Show("Send to Server!");
             }
             else

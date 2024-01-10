@@ -24,5 +24,10 @@ namespace University.Dashboard.UserControls.User
         {
             InitializeComponent();
         }
+
+        private void StudentCourseBtn_click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Hozirda bu malumotni korish imkoni mavjud emas!");
+        }
     }
 }
